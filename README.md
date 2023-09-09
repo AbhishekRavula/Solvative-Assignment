@@ -1,6 +1,6 @@
 # after cloning the repo
 
-cd server
+cd server <br/>
 npm i
 npm run dev
 
