@@ -28,7 +28,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  P5: balanceAndHistory,
+  peerFives: balanceAndHistory,
   reward: balanceAndHistory,
 });
 

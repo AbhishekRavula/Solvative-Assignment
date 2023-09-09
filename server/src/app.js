@@ -1,5 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
+import userRouter from "./routes/user.js";
+import peerFivesRouter from "./routes/peerfives.js";
+import rewardsRouter from "./routes/rewards.js";
+import cors from "cors";
 
 const app = express();
 
@@ -11,5 +15,13 @@ mongoose
   .catch((err) => {
     console.log("Error connecting to db", err.message);
   });
+
+app.use(cors());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+app.use("/users", userRouter);
+app.use("/peerfives", peerFivesRouter);
+app.use("/rewards", rewardsRouter);
 
 export default app;
